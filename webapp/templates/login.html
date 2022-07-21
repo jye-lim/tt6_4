@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <body>
+        <form method="POST" style="color:white">
+            <img src='../static/images/flask_logo.png' alt="flask-logo" width=300px/>
+            <h1>Login</h1>
+            <h6>Do not have an account?</h6>
+            <a href="{{ url_for('register_page') }}" style="color:white">Register</a>
+        </form>
+    </body>
+{% endblock %}

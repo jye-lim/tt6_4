@@ -1,0 +1,16 @@
+* {
+    font-family: Helvetica;
+}
+
+nav {
+    background-color: #313131;
+}
+
+.nav--items {
+    color: yellow;
+}
+
+body {
+background-color: #212121;
+color: white
+}
