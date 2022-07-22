@@ -68,9 +68,9 @@ input[type="submit"] {
   }
 
   .input-container2 {
-    display: float;
+    display: flex;
     flex-direction: row;
     gap: 0px;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-width: 100px;
   }
