@@ -216,11 +216,10 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.dropTable("currencys");
+    await queryInterface.dropTable("transactions");
+    await queryInterface.dropTable("exchangeRates");
+    await queryInterface.dropTable("wallets");
+    await queryInterface.dropTable("users");
   },
 };
