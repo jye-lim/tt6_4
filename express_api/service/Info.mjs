@@ -9,3 +9,11 @@ export const Info = async () => {
     Wallets: await db.Wallets.findAll(),
   };
 };
+
+export const deleteWallet = async (walletId) => {
+  db.Wallets.destroy({
+    where: {
+      id: walletId,
+    },
+  });
+};
