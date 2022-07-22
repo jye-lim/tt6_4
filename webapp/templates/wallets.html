@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  My Wallets
+{% endblock %}
+
+{% block content %}
+  <body>
+    <h1>My wallets</h1>
+    {% for wallet in wallets %}
+      {{ wallet }}<br>
+      <a href="{{ url_for('view_transactions', wallet_id=wallet.obj_id) }}">View transactions</a>
+    {% endfor %}
+  </body>
+{% endblock %}

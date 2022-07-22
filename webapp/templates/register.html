@@ -8,6 +8,9 @@
     <body>
         <form method="POST" style="color:white">
             <img src='../static/images/flask_logo.png' alt="flask-logo" width=300px/>
+            {% for item in form %}
+              {{ item }}
+            {% endfor %}
             <h1>Create Account!</h1>
             <h6>Already have an account?</h6>
             <a href="{{ url_for('login_page') }}" style="color: white">Login</a>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  "{{ wallet.name }}" transactions
+{% endblock %}
+
+{% block content %}
+  <body>
+    <h1>"{{ wallet.name }}" transactions</h1>
+    {% for transaction in transactions %}
+      id: {{ transaction.obj_id }}<br>
+      wallet_id: {{ transaction.wallet_id }}<br>
+      debit_id: {{ transaction.debit_id }}<br>
+      debit_currency: {{ transaction.debit_currency }}<br>
+      debit_amount: {{ transaction.debit_amount }}<br>
+      credit_id: {{ transaction.credit_id }}<br>
+      credit_currency: {{ transaction.credit_currency }}<br>
+      credit_amount: {{ transaction.credit_amount }}<br>
+      description: {{ transaction.description }}<br>
+      created_at: {{ transaction.created_at }}<br>
+      created_by: {{ transaction.created_by }}<br>
+      updated_at: {{ transaction.updated_at }}<br>
+      updated_by: {{ transaction.updated_by }}<br>
+      <br><br>
+    {% endfor %}
+  </body>
+{% endblock %}
