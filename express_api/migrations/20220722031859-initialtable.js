@@ -64,6 +64,7 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
     });
+
     await queryInterface.createTable("exchangeRates", {
       id: {
         allowNull: false,
@@ -172,6 +173,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
     });
+    
     await queryInterface.createTable("currencys", {
       id: {
         allowNull: false,
