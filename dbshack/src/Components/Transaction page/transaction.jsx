@@ -99,7 +99,7 @@ const Transaction = () => {
             </select>
           </div>
           <div className="button-container">
-            <input type="submit" value="convert" />
+            <input type="submit" value="Create Transaction" />
           </div>
         </form>
       </div>,
