@@ -13,11 +13,11 @@ function Wallet() {
     var credit_amount = 222
     var credit_currency = "NOK"
 
-    var mydata = JSON.parse(data);
-    alert(mydata[0].name);
-    alert(mydata[0].age);
-    alert(mydata[1].name);
-    alert(mydata[1].age);
+    // var mydata = JSON.parse(data);
+    // alert(mydata[0].name);
+    // alert(mydata[0].age);
+    // alert(mydata[1].name);
+    // alert(mydata[1].age);
     
     // componentDidMount() {
     //     var url = "https://demo8192935.mockable.io/mockApi";
@@ -43,7 +43,7 @@ function Wallet() {
         <div className="balandtrans">
             <div className="baldiv">
                 <p className="baltitle">Balance</p>
-                { this.state.Currency.map(((cloud, index) =>
+                {/* { this.state.Currency.map(((cloud, index) =>
                     <div className="balcontent" key={`${cloud.cloud}${index}`}>
                         <div className="amtcontent">
                             <p>Amount</p>
@@ -55,7 +55,17 @@ function Wallet() {
                         </div>
                     </div>
                     ))
-                }
+                } */}
+            <div className="balcontent" key={`${cloud.cloud}${index}`}>
+                    <div className="amtcontent">
+                        <p>Amount</p>
+                        <p>{amount}</p>
+                    </div>
+                    <div className="curcontent">
+                        <p>Currency</p>
+                        <p>{currency}</p>
+                    </div>
+                </div>
             </div>
             <div className="transdiv">
                 <p className="transtitle">Transactions</p>
