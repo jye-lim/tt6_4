@@ -1,9 +1,9 @@
-from flask import render_template, redirect, url_for, flash, request 
+from flask import render_template, redirect, url_for, flash, request
 from flask_login import login_user, logout_user, login_required, current_user
 
 from webapp import app, db 
 from webapp.models import User, Wallet, Currency, Transaction, ExchangeRate
-from webapp.forms import RegisterForm, LoginForm 
+from webapp.forms import RegisterForm, LoginForm
 
 @app.route('/')
 @app.route('/home')
@@ -78,3 +78,19 @@ def logout_page():
     logout_user()
     flash("You have been logged out!", category='info')
     return redirect(url_for("home_page"))
+
+
+@app.route('/wallets')
+def wallets():
+    user = User.query.filter_by(obj_id=1)
+    print(user[0])
+    user_wallets = Wallet.query.filter_by(user_id=user[0].obj_id)
+    return render_template('wallets.html', wallets=user_wallets)
+
+
+@app.route('/wallets/<wallet_id>')
+def view_transactions(wallet_id):
+    wallet = Wallet.query.filter_by(obj_id=wallet_id).first()
+    transactions = Transaction.query.filter_by(wallet_id=wallet_id)
+    transactions = [t for t in transactions]
+    return render_template('transactions.html', wallet=wallet, transactions=transactions)
