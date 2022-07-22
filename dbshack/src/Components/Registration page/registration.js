@@ -4,7 +4,7 @@ function Register (){
     const popout = () => alert("Submitted!");
 
     return  (
-        <div>
+        <div className="app">
             <form>
             <label>Name:</label>
                 <input type="text" id="name" minlength="1" required />
