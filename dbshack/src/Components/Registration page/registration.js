@@ -8,7 +8,7 @@ function Register (){
         <div className="app">
             <form>
             <label>Name:</label>
-                <input type="text" id="name" minlength="1" required />
+                <input type="text" className="name" minlength="1" required />
                 <br></br>
                 <label>Username:</label>
                 <input type="text" id="username" name="username" minlength="3" required />
