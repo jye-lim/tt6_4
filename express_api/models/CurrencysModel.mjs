@@ -25,7 +25,6 @@ export default function initCurrencysModel(sequelize, DataTypes) {
     },
     createdAt: {
       type: "TIMESTAMP",
-      defaultValue: DataTypes.literal("CURRENT_TIMESTAMP"),
     },
     createdBy: {
       allowNull: false,
@@ -33,7 +32,6 @@ export default function initCurrencysModel(sequelize, DataTypes) {
     },
     updatedAt: {
       type: "TIMESTAMP",
-      defaultValue: DataTypes.literal("CURRENT_TIMESTAMP"),
     },
     updatedBy: {
       allowNull: false,

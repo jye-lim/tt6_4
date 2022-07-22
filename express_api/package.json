@@ -16,8 +16,12 @@
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "method-override": "^3.0.0",
+    "pg": "^8.7.3",
     "psql": "0.0.1",
     "sequelize": "^6.21.3",
     "sqlite3": "^5.0.9"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
   }
 }

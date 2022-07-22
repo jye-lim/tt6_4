@@ -1,3 +1,6 @@
+import sequelizePackage from "sequelize";
+import allConfig from "../config/config.js";
+
 import initCurrencysModel from "./CurrencysModel.mjs";
 import initExchangeratesModel from "./ExchangeRatesModel.mjs";
 import initTransactionsModel from "./TransactionsModel.mjs";

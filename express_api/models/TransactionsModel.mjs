@@ -17,7 +17,6 @@ export default function initTransactionsModel(sequelize, DataTypes) {
     },
     debitId: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
     },
 
     debitCurrency: {
@@ -36,7 +35,6 @@ export default function initTransactionsModel(sequelize, DataTypes) {
 
     creditId: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
     },
 
     creditCurrency: {
@@ -58,7 +56,6 @@ export default function initTransactionsModel(sequelize, DataTypes) {
     },
     createdAt: {
       type: "TIMESTAMP",
-      defaultValue: DataTypes.literal("CURRENT_TIMESTAMP"),
     },
     createdBy: {
       allowNull: false,
@@ -66,7 +63,6 @@ export default function initTransactionsModel(sequelize, DataTypes) {
     },
     updatedAt: {
       type: "TIMESTAMP",
-      defaultValue: DataTypes.literal("CURRENT_TIMESTAMP"),
     },
     updatedBy: {
       allowNull: false,

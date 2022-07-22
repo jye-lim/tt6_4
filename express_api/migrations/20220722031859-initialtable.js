@@ -44,7 +44,6 @@ module.exports = {
       },
       userId: {
         allowNull: false,
-        unique: true,
         type: Sequelize.INTEGER,
         references: {
           model: "users",
@@ -117,7 +116,6 @@ module.exports = {
       },
       debitId: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
       },
 
       debitCurrency: {
@@ -132,7 +130,6 @@ module.exports = {
 
       creditId: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
       },
 
       creditCurrency: {
@@ -161,7 +158,6 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updatedBy: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
     });
@@ -195,7 +191,6 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       createdBy: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
       updatedAt: {
@@ -203,7 +198,6 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updatedBy: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
     });
