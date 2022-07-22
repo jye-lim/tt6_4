@@ -6,30 +6,32 @@ import BackButton from "../components/BackButton";
 function Wallet() {
     var created_at = "2021-11-04 16:00:00"
     var name = "Multi-Currency Account";
-    var amount = 123
+    var amount = Currency[0].currency
     var currency = "SGD"
     var debit_amount = 111
     var debit_currency = "EUR"
     var credit_amount = 222
     var credit_currency = "NOK"
+
     var mydata = JSON.parse(data);
     alert(mydata[0].name);
     alert(mydata[0].age);
     alert(mydata[1].name);
     alert(mydata[1].age);
     
-    componentDidMount() {
-        var url = "https://demo8192935.mockable.io/mockApi";
-        fetch(url)
-          .then(response => {
-            return response.json();
-          })
-          .then(d => {
-            this.setState({ currency: c });
-            console.log("state", this.state.clouds)
-          })
-          .catch(error => console.log(error))
-      }
+    // componentDidMount() {
+    //     var url = "https://demo8192935.mockable.io/mockApi";
+    //     fetch(url)
+    //       .then(response => {
+    //         return response.json();
+    //       })
+    //       .then(d => {
+    //         this.setState({ currency: c });
+    //         console.log("state", this.state.clouds)
+    //       })
+    //       .catch(error => console.log(error))
+    //   }
+      //Currency[0].currency
     
   return (
     <div className="walletdashboard">
@@ -41,16 +43,19 @@ function Wallet() {
         <div className="balandtrans">
             <div className="baldiv">
                 <p className="baltitle">Balance</p>
-                <div className="balcontent">
-                    <div className="amtcontent">
-                        <p>Amount</p>
-                        <p>{amount}</p>
+                { this.state.Currency.map(((cloud, index) =>
+                    <div className="balcontent" key={`${cloud.cloud}${index}`}>
+                        <div className="amtcontent">
+                            <p>Amount</p>
+                            <p>{amount}</p>
+                        </div>
+                        <div className="curcontent">
+                            <p>Currency</p>
+                            <p>{currency}</p>
+                        </div>
                     </div>
-                    <div className="curcontent">
-                        <p>Currency</p>
-                        <p>{currency}</p>
-                    </div>
-                </div>
+                    ))
+                }
             </div>
             <div className="transdiv">
                 <p className="transtitle">Transactions</p>
