@@ -26,6 +26,12 @@ def register_page():
         flash(f'Account created successfully! You are now logged in as {user_to_create.username}', category='success')
         return render_template('register.html')
 
+    if form.errors != {}: 
+        for err_msg in form.errors.values(): 
+            flash(f'The following error has occured when creating user: {err_msg}', category='danger')
+
+    return render_template('register.html', form=form)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
@@ -44,5 +50,6 @@ def login_page():
 
 @app.route('/logout')
 def logout_page():
+    logout_user()
     flash("You have been logged out!", category='info')
     return redirect(url_for("home_page"))
