@@ -28,7 +28,11 @@ function Homepage (){
 
 
 
-
+    // Generate JSX code for error message
+    const renderErrorMessage = (name) =>
+    name === errorMessages.name && (
+    <div className="error">{errorMessages.message}</div>
+    );
 
     // JSX code for login form
     const renderForm = (
