@@ -12,20 +12,16 @@ export default function routes(app) {
 
     app.get("/trxns/:trxnId", allTrxnsController.getOneTrxn);
 
-    app.post("/createTrxn", allTrxnsController.createTrxn);
-
 
     const allWalletController = walletController();
     app.get("/:user/wallets", allWalletController.getAllWallets);
 
     app.get("/:user/wallets/:walletId", allWalletController.getOneWallet);
 
-    app.post("/:user/createWallet", allWalletController.createWallet);
-
-    app.post("/:user/deleteWallet", allWalletController.deleteWallet);
+    app.post("/deleteWallet/:walletId", allWalletController.deleteWallet);
 
     const allExchangeRateController = ExchangeController();
-    app.get("/exchange", allExchangeRate.getAllExchangeRates);
+    app.get("/exchange", allExchangeRateController.getAllExchangeRates);
 
     app.get("/exchange/:currency", allExchangeRate.getExchangeRateByCurrency);
 

@@ -1,5 +1,7 @@
 import cookieParser from "cookie-parser";
-import WalletModels from "../models/findSingleWallet.mjs"
+import findAllWallets from "../models/findAllWallet.mjs";
+import findSingleWallet from "../models/findSingleWallet.mjs";
+// import deleteSingleWallet from "../models/deleteSingleWallet.mjs";
 
 
 
@@ -7,25 +9,23 @@ import WalletModels from "../models/findSingleWallet.mjs"
 export default function walletController() {
     const getAllWallets = async (req, res) => {
         const Details = req.params;
-        console.log(Details);
-        res.json("hi");
+        const userId = Details.user;
+        res.send(findAllWallets(userId));
     };
     const getOneWallet = async (req, res) => {
         const Details = req.params;
-        const walletDetails = getWalletByID(Details.user, Details.walletId);
-        res.send("walletDetails");
+        const walletDetails = findSingleWallet(Details.user, Details.walletId);
+        res.send(walletDetails);
     };
-    const createWallet = async (req, res) => {
-        console.log("test1");
-    };
-    const deleteWallet = async (req, res) => {
-        console.log("test1");
-    };
+    // const deleteWallet = async (req, res) => {
+    //     const Details = req.params;
+    //     const response = deleteWallet(Details.user, Details.walletId);
+    //     res.send(response);
+    // };
 
     return {
         getAllWallets,
         getOneWallet,
-        createWallet,
-        deleteWallet,
+        // deleteWallet,
     };
 }

@@ -7,10 +7,9 @@ const json = JSON.parse(
 
 const Wallets = json.Wallets;
 
-export default function findSingleWallet(userId, walletId) {
-    const wallet = Wallets.filter(
-        (wallet) => wallet.userId == userId && wallet.id == walletId
-    );
+export default function findAllWallets(userId) {
 
-    return wallet;
+    const wallets = Wallets.filter((wallet) => wallet.userId == userId);
+
+    return wallets;
 }
