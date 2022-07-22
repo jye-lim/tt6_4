@@ -44,7 +44,7 @@ module.exports = {
       },
       userId: {
         allowNull: false,
-        unique: true,
+        unique: false,
         type: Sequelize.INTEGER,
         references: {
           model: "users",
@@ -64,6 +64,7 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
     });
+
     await queryInterface.createTable("exchangeRates", {
       id: {
         allowNull: false,
@@ -78,7 +79,7 @@ module.exports = {
         type: Sequelize.STRING(3),
       },
 
-      exhangeCurrency: {
+      exchangeCurrency: {
         allowNull: false,
         type: Sequelize.STRING(3),
       },
@@ -121,11 +122,7 @@ module.exports = {
 
       debitCurrency: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: "exchangeRates",
-          key: "id",
-        },
+        type: Sequelize.STRING(3),
       },
 
       debitAmount: {
@@ -140,11 +137,7 @@ module.exports = {
 
       creditCurrency: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: "exchangeRates",
-          key: "id",
-        },
+        type: Sequelize.STRING(3),
       },
 
       creditAmount: {
@@ -168,10 +161,10 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updatedBy: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
     });
+
     await queryInterface.createTable("currencys", {
       id: {
         allowNull: false,
@@ -201,7 +194,6 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       createdBy: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
       updatedAt: {
@@ -209,7 +201,6 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updatedBy: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
     });
