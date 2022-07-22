@@ -74,6 +74,14 @@ function Homepage (){
         </div>
       );
 
+      //JSX code for register form
+        const registerForm = (
+            <div className="button-container">
+                <input type="submit" value="Register now" />
+            </div>
+            
+        )
+
     return (
         <div className="app">
         <div className="login-form">
