@@ -1,0 +1,1 @@
+const ExchangeRate = json.ExchangeRate;

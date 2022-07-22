@@ -3,7 +3,7 @@ import express from "express";
 import methodOverride from "method-override";
 import cors from "cors";
 import http from "http";
-import bindRoutes from "./routes.mjs";
+import bindRoutes from "./routes/routes.mjs";
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 
