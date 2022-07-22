@@ -9,10 +9,10 @@ class User(db.Model):
     name = db.Column(db.String(length=255), nullable=False)
 
     def __str__(self):
-        return f'id: {self.obj_id}\n' \
-               f'username: {self.username}\n' \
-               f'password: {self.password}\n' \
-               f'name: {self.name}'
+        return f'{{id: {self.obj_id}, ' \
+               f'username: {self.username}, ' \
+               f'password: {self.password}, ' \
+               f'name: {self.name}}}'
 
     def __repr__(self):
         return self.__str__()
@@ -25,9 +25,9 @@ class Wallet(db.Model):
     name = db.Column(db.String(length=255))
 
     def __str__(self):
-        return f'id: {self.obj_id}\n' \
-               f'user_id: {self.user_id}\n' \
-               f'name: {self.name}'
+        return f'{{id: {self.obj_id}, ' \
+               f'user_id: {self.user_id}, ' \
+               f'name: {self.name}}}'
 
     def __repr__(self):
         return self.__str__()
@@ -41,10 +41,10 @@ class Currency(db.Model):
     amount = db.Column(db.Float(), nullable=False)
 
     def __str__(self):
-        return f'id: {self.obj_id}\n' \
-               f'wallet_id: {self.wallet_id}\n' \
-               f'currency: {self.currency}\n' \
-               f'amount: {self.amount}'
+        return f'{{id: {self.obj_id}, ' \
+               f'wallet_id: {self.wallet_id}, ' \
+               f'currency: {self.currency}, ' \
+               f'amount: {self.amount}}}'
     
     def __repr__(self):
         return self.__str__()
@@ -56,7 +56,7 @@ class Transaction(db.Model):
     wallet_id = db.Column('walletId', db.Integer(), db.ForeignKey('wallet.id'), nullable=False)
     debit_id = db.Column('debitId', db.Integer(), nullable=False)
     debit_currency = db.Column('debitCurrency', db.String(length=3), nullable=False)
-    debit_amount = db.Column('debit_amount', db.Float(), nullable=False)
+    debit_amount = db.Column('debitAmount', db.Float(), nullable=False)
     credit_id = db.Column('creditId', db.Integer(), nullable=False)
     credit_currency = db.Column('creditCurrency', db.String(length=3), nullable=False)
     credit_amount = db.Column('creditAmount', db.Float(), nullable=False)
@@ -67,8 +67,8 @@ class Transaction(db.Model):
     updated_by = db.Column('updatedBy', db.String(length=255))
 
     def __str__(self):
-        return f'id: {self.obj_id}\n' \
-               f'wallet_id: {self.wallet_id}'
+        return f'{{id: {self.obj_id}, ' \
+               f'wallet_id: {self.wallet_id}}}'
     
     def __repr__(self):
         return self.__str__()
@@ -82,7 +82,7 @@ class ExchangeRate(db.Model):
     rate = db.Column(db.Float(), nullable=False)
 
     def __str__(self):
-        return f'id: {self.obj_id}\n' \
-               f'base_currency: {self.base_currency}' \
-               f'exchange_currency: {self.exchange_currency}' \
-               f'rate: {self.rate}'
+        return f'{{id: {self.obj_id}, ' \
+               f'base_currency: {self.base_currency}, ' \
+               f'exchange_currency: {self.exchange_currency}, ' \
+               f'rate: {self.rate}}}'

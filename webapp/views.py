@@ -2,12 +2,37 @@ from flask import render_template, redirect, url_for, flash, request
 from flask_login import login_user, logout_user, login_required, current_user
 
 from webapp import app, db 
-from webapp.models import User
+from webapp.models import User, Wallet, Currency, Transaction, ExchangeRate
 from webapp.forms import RegisterForm, LoginForm 
 
 @app.route('/')
 @app.route('/home')
 def home_page():
+    users = User.query.all()
+    print('USER:')
+    for user in users:
+        print(user)
+
+    wallets = Wallet.query.all()
+    print('WALLET:')
+    for wallet in wallets:
+        print(wallet)
+
+    currencies = Currency.query.all()
+    print('CURRENCY:')
+    for currency in currencies:
+        print(currency)
+
+    transactions = Transaction.query.all()
+    print('TRANSACTION:')
+    for transaction in transactions:
+        print(transaction)
+
+    exchange_rates = ExchangeRate.query.all()
+    print('EXCHANGE RATE:')
+    for e in exchange_rates:
+        print(e)
+
     return render_template('home.html')
 
 
@@ -37,11 +62,6 @@ def register_page():
 def login_page():
     form = LoginForm()
     if form.validate_on_submit():
-        print(form.username.data)
-        print(form.password.data)
-        users = User.query.all()
-        for user in users:
-            print(user)
         attempted_user = User.query.filter_by(username=form.username.data).first()
         if attempted_user and attempted_user.check_password_correction(attempted_password=form.password.data):
             login_user(attempted_user)
