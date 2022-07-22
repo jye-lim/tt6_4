@@ -39,11 +39,6 @@ input[type="submit"] {
     border: 20px;
   }
 
-  .button-container2 {
-    justify-content: top;
-    background-color: white;
-  }
-
   .login-form {
     background-color:white;
     padding: 2rem;
@@ -70,4 +65,11 @@ input[type="submit"] {
     flex-direction: column;
     gap: 8px;
     margin: 10px;
+  }
+
+  .input-container2 {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    /* background-color: #fff; */
   }

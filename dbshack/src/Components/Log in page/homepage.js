@@ -88,9 +88,9 @@ function Homepage (){
           <div className="title">Sign In</div>
           {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
         </div>
-        <div className="button-container2">
-                <input type="submit" value="Register now" />
-            </div>
+            <div className="input-container2">
+              <input type="submit" value="Register now!"/>
+            </div>   
       </div>
     );
 }
