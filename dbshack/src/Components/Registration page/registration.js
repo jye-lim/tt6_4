@@ -1,6 +1,8 @@
 import React from "react";
 
 function Register (){
+    const popout = () => alert("Submitted!");
+
     return  (
         <div>
             <form>
@@ -16,7 +18,7 @@ function Register (){
                 <label>Confirm password:</label>
                 <input type="password" id="confirm" name="confirm" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required />
                 <br></br>
-                <input type="submit" value="Register"/>
+                <input type="submit" value="Register" onClick= {popout}/>
             </form>
         </div>
     )
