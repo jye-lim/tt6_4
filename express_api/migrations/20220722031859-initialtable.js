@@ -122,11 +122,7 @@ module.exports = {
 
       debitCurrency: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: "exchangeRates",
-          key: "id",
-        },
+        type: Sequelize.STRING(3),
       },
 
       debitAmount: {
@@ -141,11 +137,7 @@ module.exports = {
 
       creditCurrency: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: "exchangeRates",
-          key: "id",
-        },
+        type: Sequelize.STRING(3),
       },
 
       creditAmount: {
@@ -173,7 +165,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
     });
-    
+
     await queryInterface.createTable("currencys", {
       id: {
         allowNull: false,
