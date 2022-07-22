@@ -10,8 +10,8 @@ function Register (){
                 <label>Username:</label>
                 <input type="text" id="username" name="username" minlength="6" required />
                 <br></br>
-                <label>Username:</label>
-                <input type="text" id="username" name="username" minlength="6" required />
+                <label>Password:</label>
+                <input type="password" id="pwd" name="pwd" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
                 <br></br>
                 <label>Will you be coming?:</label>
                 <select name="attendance">
