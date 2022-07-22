@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "123456ty",
-    "database": "dbs",
-    "host": "127.0.0.1",
+    "username": "admin",
+    "password": "admin",
+    "database": "tt6_4_db",
+    "host": "localhost",
     "dialect": "postgres"
   }
 }
