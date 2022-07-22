@@ -1,1 +1,3 @@
-export default function routes(app) {}
+export default function routes(app) {
+    
+}
