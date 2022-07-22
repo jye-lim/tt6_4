@@ -5,10 +5,7 @@ const json = JSON.parse(
 
 const Transactions = json.Transactions;
 
-export default function findSingleTransactions(trxnId) {
-    const trxn = Transactions.filter(
-        (trxn) => trxn.id == trxnId
-    );
+export default function findAllTransactions(userId) {
 
-    return trxn;
+    return Transactions;
 }

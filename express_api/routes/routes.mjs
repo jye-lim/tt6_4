@@ -14,9 +14,9 @@ export default function routes(app) {
 
 
     const allWalletController = walletController();
-    app.get("/:user/wallets", allWalletController.getAllWallets);
+    app.get("/wallets", allWalletController.getAllWallets);
 
-    app.get("/:user/wallets/:walletId", allWalletController.getOneWallet);
+    app.get("/wallets/:walletId", allWalletController.getOneWallet);
 
     app.post("/deleteWallet/:walletId", allWalletController.deleteWallet);
 

@@ -3,10 +3,11 @@ const json = JSON.parse(
     await readFile(new URL("../test.json", import.meta.url))
 );
 
-const ExchangeRate = json.ExchangeRate;
+const Currency = json.Currency;
 
 
-export default function findAllExchange(currency) {
-    return Exchange;
+
+export default function findAllCurrency() {
+    return Currency;
 }
 
