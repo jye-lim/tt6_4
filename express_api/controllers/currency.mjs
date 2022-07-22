@@ -1,11 +1,10 @@
 import cookieParser from "cookie-parser";
-import findAllWallets from "../services/findAllWallet.mjs";
-import findSingleWallet from "../services/findSingleWallet.mjs";
+import findAllCurrency from "../services/findAllCurrency.mjs";
 
-export default function trxnsController() {
+export default function CurrencyController() {
     const getAllCurrency = async (req, res) => {
-        const Details = req.params;
-        res.send(findAllTransactions(Details.userId));
+        const Currency = findAllCurrency();
+        res.send(Currency);
     };
 
     return {

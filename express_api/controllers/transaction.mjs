@@ -4,8 +4,7 @@ import findSingleTransactions from "../services/findSingleTrxn.mjs";
 
 export default function trxnsController() {
     const getAllTrxns = async (req, res) => {
-        const Details = req.params;
-        res.send(findAllTransactions(Details.userId));
+        res.send(findAllTransactions());
     };
     const getOneTrxn = async (req, res) => {
         const Details = req.params;

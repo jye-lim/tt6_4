@@ -9,7 +9,6 @@ const Wallets = json.Wallets;
 
 export default function findAllWallets(walletID) {
 
-    const wallets = Wallets.filter((wallet) => wallet.id == walletID);
 
-    return wallets;
+    return Wallets;
 }

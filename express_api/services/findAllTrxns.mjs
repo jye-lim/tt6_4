@@ -5,7 +5,7 @@ const json = JSON.parse(
 
 const Transactions = json.Transactions;
 
-export default function findAllTransactions(userId) {
+export default function findAllTransactions() {
 
     return Transactions;
 }

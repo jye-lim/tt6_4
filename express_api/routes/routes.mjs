@@ -18,12 +18,15 @@ export default function routes(app) {
 
     app.get("/wallets/:walletId", allWalletController.getOneWallet);
 
-    app.post("/deleteWallet/:walletId", allWalletController.deleteWallet);
+    // app.post("/deleteWallet/:walletId", allWalletController.deleteWallet);
 
     const allExchangeRateController = ExchangeController();
     app.get("/exchange", allExchangeRateController.getAllExchangeRates);
 
-    app.get("/exchange/:currency", allExchangeRate.getExchangeRateByCurrency);
+    // app.get(
+    //     "/exchange/:currency",
+    //     CurrencyController.getExchangeRateByCurrency
+    // );
 
     const allCurrencyController = CurrencyController();
     app.get("/currency", allCurrencyController.getAllCurrency);

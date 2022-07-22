@@ -5,8 +5,6 @@ const json = JSON.parse(
 
 const Currency = json.Currency;
 
-
-
 export default function findAllCurrency() {
     return Currency;
 }
