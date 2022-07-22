@@ -13,11 +13,8 @@ function Register (){
                 <label>Password:</label>
                 <input type="password" id="pwd" name="pwd" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
                 <br></br>
-                <label>Will you be coming?:</label>
-                <select name="attendance">
-                    <option value="yes">Yes, i am coming</option>
-                    <option value="no">No, i am not coming</option>
-                </select>
+                <label>Confirm password:</label>
+                <input type="password" id="confirm" name="confirm" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required />
             </form>
         </div>
     )
