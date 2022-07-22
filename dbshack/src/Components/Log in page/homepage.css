@@ -1,0 +1,20 @@
+.app {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f8f9fd;
+    background-image: url(https://media.istockphoto.com/photos/singapore-glowing-at-night-picture-id590050726?k=20&m=590050726&s=612x612&w=0&h=XoGFM6z2bGu9qNk6HYCQbT4UO1SpeiZP-SfOGgIzdl8=);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+input[type="text"],
+input[type="password"] {
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
