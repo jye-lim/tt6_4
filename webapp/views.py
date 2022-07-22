@@ -36,7 +36,12 @@ def register_page():
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
     form = LoginForm()
-    if form.validate_on_submit(): 
+    if form.validate_on_submit():
+        print(form.username.data)
+        print(form.password.data)
+        users = User.query.all()
+        for user in users:
+            print(user)
         attempted_user = User.query.filter_by(username=form.username.data).first()
         if attempted_user and attempted_user.check_password_correction(attempted_password=form.password.data):
             login_user(attempted_user)

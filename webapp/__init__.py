@@ -9,7 +9,7 @@ conf_path = '../express_api/config/config.json'
 conf = json.load(open(os.path.join(path, conf_path)))
 conf = conf['development']
 
-db_uri = f'postgres://{conf["username"]}:{conf["password"]}@{conf["host"]}:{conf["port"]}/{conf["database"]}'
+db_uri = f'postgresql://{conf["username"]}:{conf["password"]}@{conf["host"]}:{conf["port"]}/{conf["database"]}'
 print(db_uri)
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
