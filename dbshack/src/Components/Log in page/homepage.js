@@ -19,7 +19,10 @@ function Homepage (){
     }
   ];
 
-
+  const errors = {
+    uname: "invalid username",
+    pass: "invalid password"
+  };
 
 
 
