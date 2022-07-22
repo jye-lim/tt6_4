@@ -1,98 +1,73 @@
 import React, { useState } from "react";
 // import ReactDOM from "react-dom";
-import './homepage.css'
+import "./homepage.css";
+import axios from "axios";
 
-function Homepage (){
-     // React States
+function Homepage() {
+  // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // User Login info hardcode
-  const database = [
-    {
-      username: "user1",
-      password: "pass1"
-    },
-    {
-      username: "user2",
-      password: "pass2"
-    }
-  ];
-
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password"
-  };
 
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
 
     var { uname, pass } = document.forms[0];
-
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
-
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
-    }
+    console.log(uname.value, pass.value);
+    axios.post("http://localhost:5000/login", {
+      username: uname.value,
+      password: pass.value,
+    });
   };
 
-    // Generate JSX code for error message
-    const renderErrorMessage = (name) =>
+  // Generate JSX code for error message
+  const renderErrorMessage = (name) =>
     name === errorMessages.name && (
-    <div className="error">{errorMessages.message}</div>
+      <div className="error">{errorMessages.message}</div>
     );
 
-    // JSX code for login form
-    const renderForm = (
-        <div className="form">
-          <form onSubmit={handleSubmit}>
-            <div className="input-container">
-              <label>Username </label>
-              <input type="text" name="uname" required />
-              {renderErrorMessage("uname")}
-            </div>
-            <div className="input-container">
-              <label>Password </label>
-              <input type="password" name="pass" required />
-              {renderErrorMessage("pass")}
-            </div>
-            <div className="button-container">
-              <input type="submit" value="Log in"/>
-            </div>
-          </form>
+  // JSX code for login form
+  const renderForm = (
+    <div className="form">
+      <form onSubmit={handleSubmit}>
+        <div className="input-container">
+          <label>Username </label>
+          <input type="text" name="uname" required />
+          {renderErrorMessage("uname")}
         </div>
-      );
-
-      //JSX code for register form
-        // const registerForm = (
-        //     <div className="button-container">
-        //         <input type="submit" value="Register now" />
-        //     </div>
-            
-        // )
-
-    return (
-        <div className="app">
-        <div className="login-form">
-          <div className="title">Sign In</div>
-          {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        <div className="input-container">
+          <label>Password </label>
+          <input type="password" name="pass" required />
+          {renderErrorMessage("pass")}
         </div>
-            <div className="input-container2">
-              <input type="submit" value="Register now!"/>
-            </div>   
+        <div className="button-container">
+          <input type="submit" value="Log in" />
+        </div>
+      </form>
+    </div>
+  );
+
+  //JSX code for register form
+  // const registerForm = (
+  //     <div className="button-container">
+  //         <input type="submit" value="Register now" />
+  //     </div>
+
+  // )
+
+  return (
+    <div className="app">
+      <div className="login-form">
+        <div className="title">Sign In</div>
+        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
-    );
+      <div className="input-container2">
+        <input type="submit" value="Register now!" />
+      </div>
+    </div>
+  );
 }
 
 export default Homepage;
