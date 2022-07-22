@@ -25,6 +25,6 @@ export default function walletController() {
     return {
         getAllWallets,
         getOneWallet,
-        deleteWallet,
+        deleteSingleWallet,
     };
 }
