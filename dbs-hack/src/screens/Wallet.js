@@ -12,9 +12,28 @@ function Wallet() {
     var debit_currency = "EUR"
     var credit_amount = 222
     var credit_currency = "NOK"
+    var mydata = JSON.parse(data);
+    alert(mydata[0].name);
+    alert(mydata[0].age);
+    alert(mydata[1].name);
+    alert(mydata[1].age);
+    
+    componentDidMount() {
+        var url = "https://demo8192935.mockable.io/mockApi";
+        fetch(url)
+          .then(response => {
+            return response.json();
+          })
+          .then(d => {
+            this.setState({ currency: c });
+            console.log("state", this.state.clouds)
+          })
+          .catch(error => console.log(error))
+      }
     
   return (
     <div className="walletdashboard">
+    <script type="text/javascript" src="javascript.js"></script>
         <BackButton/>
         <p>Name of wallet: {name}</p>
         <button className="convertcurrencybtn">Convert Currency</button>
