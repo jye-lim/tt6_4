@@ -1,12 +1,13 @@
 import cookieParser from "cookie-parser";
 import express from "express";
 import methodOverride from "method-override";
-import bindRoutes from "./routes/routes.mjs";
 import cors from "cors";
-import { WebSocketServer } from "ws";
 import http from "http";
+import bindRoutes from "./routes.mjs";
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
+
+
 
 // Initialise Express instance
 const app = express();
