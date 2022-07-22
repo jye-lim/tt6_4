@@ -23,11 +23,15 @@ print(transaction_json)
 print(exchangeRate_json)
 
 # Connections
+conf_path = '../express_api/config/config.json'
+conf = json.load(open(os.path.join(path, conf_path)))
+conf = conf['development']
+
 conn = psycopg2.connect(
-    host='localhost',
-    database='tt6_4_db',
-    user='admin',
-    password='admin',
+    host=conf['host'],
+    database=conf['database'],
+    user=conf['username'],
+    password=conf['password'],
 )
 cur = conn.cursor()
 
