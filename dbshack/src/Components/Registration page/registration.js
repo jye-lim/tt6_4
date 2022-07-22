@@ -15,6 +15,8 @@ function Register (){
                 <br></br>
                 <label>Confirm password:</label>
                 <input type="password" id="confirm" name="confirm" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required />
+                <br></br>
+                <input type="submit" value="Register"/>
             </form>
         </div>
     )
