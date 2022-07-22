@@ -75,12 +75,12 @@ function Homepage (){
       );
 
       //JSX code for register form
-        const registerForm = (
-            <div className="button-container">
-                <input type="submit" value="Register now" />
-            </div>
+        // const registerForm = (
+        //     <div className="button-container">
+        //         <input type="submit" value="Register now" />
+        //     </div>
             
-        )
+        // )
 
     return (
         <div className="app">
@@ -88,6 +88,9 @@ function Homepage (){
           <div className="title">Sign In</div>
           {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
         </div>
+        <div className="button-container">
+                <input type="submit" value="Register now" />
+            </div>
       </div>
     );
 }
