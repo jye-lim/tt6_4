@@ -1,5 +1,9 @@
 import { InfoController } from "./controllers/InfoController.mjs";
 
-export default function routes(app) {
+export function routes(app) {
   app.get("/", InfoController);
+}
+
+export function Login(app) {
+  app.post("/login", Login);
 }
